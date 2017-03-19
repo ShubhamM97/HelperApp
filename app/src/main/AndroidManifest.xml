@@ -18,6 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SettingsActivity"
+            android:theme="@style/AppTheme"
+            android:label="Settings"
+            android:parentActivityName=".MainActivity">
+        </activity>
+
     </application>
 
 </manifest>

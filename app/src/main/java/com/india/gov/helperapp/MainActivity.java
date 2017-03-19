@@ -1,5 +1,6 @@
 package com.india.gov.helperapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -83,7 +84,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
             textView.setText("Share and propagate the app");
         } else if (id == R.id.nav_settings) {
-            textView.setText("Change app settings");
+            Intent settingsintent = new Intent(this,SettingsActivity.class);
+            startActivity(settingsintent);
         } else if (id == R.id.nav_about) {
             textView.setText("About the app and its developers!");
         }
