@@ -18,10 +18,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SettingsActivity"
-            android:parentActivityName=".MainActivity"
-            android:label="Settings">
-        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="Settings"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".UpdateListActivity"
+            android:label="Dashboard"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UpdateDetailActivity"
+            android:label="Update Detail"
+            android:parentActivityName=".UpdateListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MyAccountActivity"
+            android:label="My Account"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RecommendationsActivity"
+            android:label="Recommendations"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BookmarksActivity"
+            android:label="Bookmarks"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AboutActivity"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

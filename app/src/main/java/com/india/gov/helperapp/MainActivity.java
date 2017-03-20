@@ -2,42 +2,51 @@ package com.india.gov.helperapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    TextView textView;
+    DrawerLayout drawer;
+    Toolbar toolbar;
+    ConstraintLayout constraintLayout;
+    NavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        textView  = (TextView) findViewById(R.id.textView);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        constraintLayout = (ConstraintLayout) findViewById(R.id.constraintLayout);
+
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -73,21 +82,29 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        TextView textView = (TextView) findViewById(R.id.textView);
 
         if (id == R.id.nav_my_acc) {
-            textView.setText("My Account Details");
+            Intent myaccintent = new Intent(getApplicationContext(),MyAccountActivity.class);
+            startActivity(myaccintent);
         } else if (id == R.id.nav_dashboard) {
-            textView.setText("My Dashboard");
+            Intent dashintent = new Intent(getApplicationContext(),UpdateListActivity.class);
+            startActivity(dashintent);
         } else if (id == R.id.nav_recs) {
-            textView.setText("Recommendations for me");
+            Intent recsintent = new Intent(getApplicationContext(),RecommendationsActivity.class);
+            startActivity(recsintent);
+        } else if (id == R.id.nav_bookmarks) {
+            Intent bookmarkintent = new Intent(getApplicationContext(),BookmarksActivity.class);
+            startActivity(bookmarkintent);
         } else if (id == R.id.nav_share) {
-            textView.setText("Share and propagate the app");
+            Intent shareintent = new Intent(Intent.ACTION_SEND);
+            shareintent.setType("Text/html");
+            shareintent.putExtra(Intent.EXTRA_TEXT, "The Playstore Link to this app is: @playstore");
+            startActivity(Intent.createChooser(shareintent,"Share using"));
         } else if (id == R.id.nav_settings) {
             Intent settingsintent = new Intent(this,SettingsActivity.class);
             startActivity(settingsintent);
         } else if (id == R.id.nav_about) {
-            textView.setText("About the app and its developers!");
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
