@@ -1,2 +1,2 @@
 # HelperApp
-Sample app code with navigation drawer changed according to our app
+Done with the most part of the App
