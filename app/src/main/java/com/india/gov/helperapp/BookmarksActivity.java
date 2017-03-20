@@ -1,11 +1,9 @@
 package com.india.gov.helperapp;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TextView;
 
 public class BookmarksActivity extends MainActivity {
 
@@ -23,5 +21,10 @@ public class BookmarksActivity extends MainActivity {
     protected void onResume(){
         super.onResume();
         navigationView.getMenu().getItem(3).setChecked(true);
+    }
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
     }
 }

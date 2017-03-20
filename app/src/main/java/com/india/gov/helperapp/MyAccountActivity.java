@@ -24,4 +24,9 @@ public class MyAccountActivity extends MainActivity {
         super.onResume();
         navigationView.getMenu().getItem(0).setChecked(true);
     }
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+    }
 }

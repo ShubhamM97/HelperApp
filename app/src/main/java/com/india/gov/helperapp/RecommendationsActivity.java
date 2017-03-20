@@ -24,4 +24,10 @@ public class RecommendationsActivity extends MainActivity {
         super.onResume();
         navigationView.getMenu().getItem(2).setChecked(true);
     }
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+    }
+
 }
