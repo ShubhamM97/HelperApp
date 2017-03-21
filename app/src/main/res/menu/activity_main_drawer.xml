@@ -14,6 +14,10 @@
             android:id="@+id/nav_recs"
             android:icon="@drawable/ic_menu_recs"
             android:title="Recommendations" />
+        <item
+            android:id="@+id/nav_bookmarks"
+            android:icon="@drawable/ic_bookmarks"
+            android:title="Bookmarks" />
     </group>
 
     <item android:title="Communicate">
