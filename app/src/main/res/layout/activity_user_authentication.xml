@@ -4,11 +4,10 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="20dp"
+
     android:orientation="vertical"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+
     tools:context="com.india.gov.helperapp.UserAuthentication">
 
     <ImageView
@@ -20,11 +19,14 @@
 
     <TextView
         android:layout_marginTop="35dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="20dp"
         android:layout_height="wrap_content"
+        android:background="#50398c"
+        android:textColor="@color/cardview_light_background"
         android:text="Do you want to SignUp or Login ?"
         android:textSize="20dp"
-        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
         />
 
     <Button
@@ -32,6 +34,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#50398c"
+        android:textColor="@color/cardview_light_background"
         android:text="SignUp"
         android:onClick="SignUp"
         />
@@ -40,6 +44,8 @@
         android:layout_marginTop="35dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
+        android:background="#50398c"
+        android:textColor="@color/cardview_light_background"
         android:layout_height="wrap_content"
         android:text="Login"
         android:onClick="Login"
