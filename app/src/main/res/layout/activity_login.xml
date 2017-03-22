@@ -7,11 +7,15 @@
     tools:context="com.india.gov.helperapp.Login">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp"
-        android:textSize="40dp"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="30dp"
+        android:padding="10dp"
+        android:background="#50398c"
+        android:textColor="@color/cardview_light_background"
         android:text="Login" />
 
     <TextView
@@ -19,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:textSize="20dp"
+        android:textStyle="bold"
         android:text="Enter the details" />
 
     <LinearLayout
@@ -31,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:textSize="20dp"
+            android:textStyle="bold"
             android:text="Aadhaar ID : " />
 
         <EditText
@@ -52,6 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:textSize="20dp"
+            android:textStyle="bold"
             android:text="Password : " />
 
         <EditText
@@ -69,6 +76,8 @@
         android:layout_height="wrap_content"
         android:text="Login"
         android:onClick="login"
+        android:background="#50398c"
+        android:textColor="@color/cardview_light_background"
         android:layout_gravity="center_horizontal"
         />
 
