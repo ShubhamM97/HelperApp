@@ -5,6 +5,7 @@ import android.app.Notification;
 import android.content.Context;
 import android.support.v4.app.NotificationCompat;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -41,9 +42,7 @@ public class DummyContent {
     }
 
     private static DummyItem createDummyItem(int position) {
-        
         return new DummyItem(String.valueOf(position), "Update " + position, makeDetails(position));
-
     }
 
     private static String makeDetails(int position) {

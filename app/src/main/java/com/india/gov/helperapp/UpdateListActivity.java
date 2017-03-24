@@ -1,5 +1,8 @@
 package com.india.gov.helperapp;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +19,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.india.gov.helperapp.dummy.DummyContent;
 
@@ -47,19 +51,6 @@ public class UpdateListActivity extends MainActivity {
 
         textView.setVisibility(View.GONE);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DummyContent.call();
-                ViewGroup viewGroup = (ViewGroup) findViewById(R.id.mail_list);
-                viewGroup.requestLayout();
-                Snackbar.make(view, "Received New Mail", Snackbar.LENGTH_LONG)
-                        .setAction("Mail", null).show();
-
-            }
-        });
-
         View recyclerView = findViewById(R.id.mail_list);
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
@@ -71,6 +62,25 @@ public class UpdateListActivity extends MainActivity {
             // activity should be in two-pane mode.
             mTwoPane = true;
         }
+    }
+
+    public void do_update(View view){
+        DummyContent.call();
+        ViewGroup viewgroup = (ViewGroup) findViewById(R.id.mail_list);
+        viewgroup.requestLayout();
+        Toast.makeText(this, "Updated", Toast.LENGTH_SHORT).show();
+        notification();
+    }
+
+    public void notification(){
+        NotificationManager NM = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        Intent notificationIntent = new Intent(this,UpdateListActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this,0,notificationIntent,0);
+        Notification notify = new Notification.Builder(getApplicationContext()).setContentTitle("Updates").setContentText("You have new Updates").setContentTitle("Update Notification").setSmallIcon(R.mipmap.ic_launcher).setContentIntent(pendingIntent).build();
+        notify.flags |= Notification.FLAG_AUTO_CANCEL;
+        NM.notify(0,notify);
+
+
     }
 
     @Override

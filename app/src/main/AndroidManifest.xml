@@ -30,6 +30,17 @@
         <activity android:name=".SkillSetActivity" />
         <activity android:name=".Login" />
         <activity android:name=".OTPActivity"></activity>
+        <activity android:name=".UpdateListActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".UpdateDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".UpdateDetailActivity"/>
+        <activity android:name=".BookmarksActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".MyAccountActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".RecommendationsActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
