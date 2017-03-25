@@ -13,7 +13,7 @@ public class StartingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_starting);
     }
 
-    public void Candidate(View view)
+    public void candidatefunc(View view)
     {
         Intent selectChoice = new Intent(StartingActivity.this,UserAuthentication.class);
         startActivity(selectChoice);
